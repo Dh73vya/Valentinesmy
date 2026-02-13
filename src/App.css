@@ -1,0 +1,179 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient to right, #ffb6c1, #ffe4e1;
+  color: #444;
+  overflow: hidden; /* Hide overflowing hearts */
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  font-size: 25px;
+  animation: floatUp 8s infinite ease-in;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.valentine-card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #f48fb1;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.yes-btn, .no-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.yes-btn {
+  background-color: #e91e63;
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+}
+
+.yes-btn:hover {
+  background-color: #d81b60;
+  transform: translateY(-3px);
+}
+
+.no-btn {
+  background-color: #f48fb1;
+  position: absolute;
+  box-shadow: 0 5px 15px rgba(244, 143, 177, 0.4);
+}
+
+.no-btn:hover {
+  background-color: #f06292;
+  transform: scale(1.05); /* Slightly enlarge when hovered */
+}
+
+
+.gift-section {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1;
+}
+
+.gift-section h1 {
+  color: #e91e63;
+  margin-bottom: 30px;
+}
+
+.photos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Allow photos to wrap on smaller screens */
+}
+
+.photos div {
+  text-align: center;
+}
+
+.photos img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #f48fb1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.photos img:hover {
+  transform: scale(1.05);
+}
+
+.photos h3 {
+  color: #e91e63;
+  margin-top: 15px;
+}
+
+.message {
+  font-size: 1.2em;
+  line-height: 1.8;
+  max-width: 650px;
+  margin: 30px auto 0;
+  padding: 25px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.2);
+  color: #444;
+  animation: fadeInUp 1.5s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+  font-family: 'Segoe UI', cursive;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
