@@ -70,10 +70,8 @@ function App() {
 
          <p className="message">
   I miss you so much, Pa. I don’t even know how to express it, but today I felt I had to tell you. <br /><br />
-
-  Maybe I made many mistakes, but they only happened because I was possessive and I love you deeply. Papa loves you so much too — you are her superhero. <br /><br />
-
-  You are our Thanos… strong, protective, and powerful. ❤️  
+   Maybe I made many mistakes, but they only happened because I was possessive and I love you deeply. Papa loves you so much too — you are her superhero. <br /><br />
+   You are our Thanos… strong, protective, and powerful. ❤️  
   I’m truly sorry for everything. I love you more than words can ever say. 💕
 </p>
 
