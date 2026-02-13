@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import familyImg from "./assets/family.jpg";
+import usImg from "./assets/us.jpg";
 
 function App() {
   const [giftOpened, setGiftOpened] = useState(false);
@@ -57,12 +59,12 @@ function App() {
           <div className="photos">
             <div>
               <h3>Our Family</h3>
-              <img src="/family.jpg" alt="Family" />
+              <img src={familyImg} alt="Family" />
             </div>
 
             <div>
               <h3>Our Love</h3>
-              <img src="/us.jpg" alt="Us" />
+             <img src={usImg} alt="Us" />
             </div>
           </div>
 
