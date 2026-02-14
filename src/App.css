@@ -1,40 +1,50 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BODY */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: linear-gradient(
+    to right,
+    #e8cfcf,
+    #f3e7e7
+  );
+  color: #555;
+  overflow-x: hidden;
+  overflow-y: auto;
   min-height: 100vh;
-  background: linear-gradient to right, #ffb6c1, #ffe4e1;
-  color: #444;
-  overflow: hidden; /* Hide overflowing hearts */
 }
 
+/* CONTAINER */
 .container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  padding: 20px;
 }
 
+/* HEARTS – FRONT FLOAT */
 .hearts {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 0;
+  z-index: 5; /* FRONT */
 }
 
 .heart {
   position: absolute;
-  font-size: 25px;
+  font-size: 24px;
   animation: floatUp 8s infinite ease-in;
-  opacity: 0;
+  opacity: 0.6;
 }
 
 @keyframes floatUp {
@@ -43,7 +53,7 @@ body {
     opacity: 0;
   }
   50% {
-    opacity: 1;
+    opacity: 0.6;
   }
   100% {
     transform: translateY(-100px) scale(1.2);
@@ -51,85 +61,81 @@ body {
   }
 }
 
-.valentine-card {
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+/* CARD & GIFT */
+.valentine-card,
+.gift-section {
+  background-color: #faf7f7;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
+
   position: relative;
-  z-index: 1;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 680px;
+  margin: 20px auto;
 }
 
+/* HEADINGS */
 h1 {
-  color: #e91e63;
-  margin-bottom: 20px;
+  color: #b76e79; /* dusty rose */
+  margin-bottom: 18px;
 }
 
 h2 {
-  color: #f48fb1;
+  color: #c48b94;
   margin-bottom: 10px;
 }
 
+/* BUTTONS */
 .buttons {
-  margin-top: 30px;
+  margin-top: 25px;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.yes-btn, .no-btn {
-  padding: 12px 25px;
+.yes-btn,
+.no-btn {
+  padding: 12px 24px;
   border: none;
   border-radius: 30px;
-  font-size: 18px;
+  font-size: 17px;
   cursor: pointer;
   transition: all 0.3s ease;
   color: #fff;
 }
 
 .yes-btn {
-  background-color: #e91e63;
-  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+  background-color: #b76e79;
+  box-shadow: 0 4px 10px rgba(183, 110, 121, 0.3);
 }
 
 .yes-btn:hover {
-  background-color: #d81b60;
-  transform: translateY(-3px);
+  background-color: #a45c66;
+  transform: translateY(-2px);
 }
 
 .no-btn {
-  background-color: #f48fb1;
+  background-color: #d1a3aa;
   position: absolute;
-  box-shadow: 0 5px 15px rgba(244, 143, 177, 0.4);
+  box-shadow: 0 4px 10px rgba(209, 163, 170, 0.3);
 }
 
 .no-btn:hover {
-  background-color: #f06292;
-  transform: scale(1.05); /* Slightly enlarge when hovered */
+  background-color: #c7929a;
+  transform: scale(1.05);
 }
 
-
-.gift-section {
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  z-index: 1;
-}
-
-.gift-section h1 {
-  color: #e91e63;
-  margin-bottom: 30px;
-}
-
+/* PHOTOS */
 .photos {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-bottom: 30px;
-  flex-wrap: wrap; /* Allow photos to wrap on smaller screens */
+  gap: 25px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 .photos div {
@@ -137,43 +143,55 @@ h2 {
 }
 
 .photos img {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
-  border: 3px solid #f48fb1;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.photos img:hover {
-  transform: scale(1.05);
+  border: 3px solid #d8b0b6;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
 }
 
 .photos h3 {
-  color: #e91e63;
-  margin-top: 15px;
+  color: #b76e79;
+  margin-top: 12px;
 }
 
+/* MESSAGE */
 .message {
-  font-size: 1.2em;
+  font-size: 1.05em;
   line-height: 1.8;
   max-width: 650px;
-  margin: 30px auto 0;
-  padding: 25px;
-  border-radius: 15px;
-  background: linear-gradient(135deg, #fff0f5, #ffe4ec);
-  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.2);
-  color: #444;
-  animation: fadeInUp 1.5s ease forwards;
-  opacity: 0;
-  transform: translateY(40px);
+  margin: 30px auto 60px;
+  padding: 22px;
+
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    #f6eeee,
+    #f1e3e3
+  );
+  box-shadow: 0 8px 18px rgba(183, 110, 121, 0.15);
+  color: #555;
+
+  opacity: 1;
+  transform: none;
   font-family: 'Segoe UI', cursive;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* MOBILE */
+@media (max-width: 768px) {
+  .valentine-card,
+  .gift-section {
+    padding: 22px;
+    max-width: 95%;
+  }
+
+  .photos img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .message {
+    font-size: 1em;
   }
 }
